@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  sudo: yes
+  roles:
+    - role: gcoop-libre.pure-ftpd
+  vars:
+    pureftpd_virtual_users_import: true
+    pureftpd_virtual_users:
+      # Available properties
+      - name: ftpuser
+        password: ftpuser
+        homedir: /var/ftp/ftpuser
+    pureftpd_auth_unix: 90
