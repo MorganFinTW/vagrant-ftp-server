@@ -11,4 +11,10 @@
       - name: ftpuser
         password: ftpuser
         homedir: /var/ftp/ftpuser
+        quota_files: 2000
+        quota_size: 500
+        bandwidth_ul: 5
+        bandwidth_dl: 5
+        ratio_ul: 10
+        ratio_dl: 1
     pureftpd_auth_unix: 90
