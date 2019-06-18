@@ -18,3 +18,4 @@
         ratio_ul: 10
         ratio_dl: 1
     pureftpd_auth_unix: 90
+    MaxClientsPerIP: 10
