@@ -1,5 +1,5 @@
 # vagrant-ftp-server
-vagrant quick inital a ftp server
+vagrant quick initial an FTP server
 
 > more ansible role information, please go to github as below
 >
