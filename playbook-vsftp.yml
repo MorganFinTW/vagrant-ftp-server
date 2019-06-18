@@ -15,6 +15,10 @@
   vars:
     vsftpd_service_enabled: yes
     vsftpd_service_state: started
+    vsftpd_users:
+      - username: ftpuser
+        name: FTP User
+        password: "{{ 'ftpuser' | password_hash('sha256', 'mysecretsalt') }}"
     vsftpd_config:
        local_enable: 'YES'
        write_enable: 'YES'
@@ -22,5 +26,10 @@
        pasv_min_port: 10090
        pasv_max_port: 10100
        local_umask: '022'
-  tasks:
-    - user: name=ftpuser comment="password=ftpuser" shell=/bin/bash createhome=yes password="$6$u/dyvjOjdtugh$C32ggiu18zXggWS0ZMnfleEf9MzzKc7VaWx.JiC.J7cyEnlWzHxjtMMPuWmkoc9MloIs/NrrAT9F9jC.8xBvL1"
+       chroot_local_user: YES
+       chroot_list_enable: 'YES'
+       allow_writeable_chroot: 'YES'
+       chroot_list_file: '/etc/vsftpd.chroot_list'
+   - tasks:
+       - name: create chroot list
+         shell: touch /etc/vsftpd.chroot_list

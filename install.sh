@@ -13,7 +13,7 @@ if [[ "$(which pip)" = "" ]];then
     echo "pip can't be found."
     exit -1
 else
-    pip install ansible
+    pip install -r requirements.txt
 fi
 
 # vsftpd
