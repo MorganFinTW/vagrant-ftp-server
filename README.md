@@ -9,6 +9,11 @@ vagrant quick inital a ftp server
 > ansible pure-ftpd
 > https://github.com/gcoop-libre/ansible-role-pure-ftpd
 
+---
+default username : ftpuser  
+default password : ftpuser
+
+---
 #### vsftp
 configurate settings at `playbook-vsftp.yml`
 ```bash
@@ -20,3 +25,4 @@ configurate settings at `playbook-pureftp.yml`
 ```bash
 vagrant up pureftp
 ```
+
